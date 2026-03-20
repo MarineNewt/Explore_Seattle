@@ -1,7 +1,8 @@
+//Archived component
 "use client";
 
 import Image from "next/image";
-import { Spot, CATEGORIES } from "@/data/spots";
+import { Spot, categories } from "@/data/spots";
 
 interface SpotListProps {
   spots: Spot[];
@@ -18,7 +19,7 @@ export default function SpotList({ spots, activeSpot, onSpotSelect }: SpotListPr
 
       <div className="list-scroll">
         {spots.map((spot) => {
-          const cat = CATEGORIES[spot.category];
+          const cat:any = categories[spot.category as keyof typeof categories];
           const isActive = activeSpot?.id === spot.id;
           return (
             <button
@@ -28,7 +29,7 @@ export default function SpotList({ spots, activeSpot, onSpotSelect }: SpotListPr
             >
               <div className="card-image-wrap">
                 <Image
-                  src={spot.image}
+                  src={spot.photo}
                   alt={spot.name}
                   fill
                   className="card-image"
@@ -40,7 +41,7 @@ export default function SpotList({ spots, activeSpot, onSpotSelect }: SpotListPr
                   {cat.label}
                 </span>
                 <h3 className="card-name">{spot.name}</h3>
-                <p className="card-desc">{spot.shortDescription}</p>
+                <p className="card-desc">{spot.description}</p>
               </div>
             </button>
           );
