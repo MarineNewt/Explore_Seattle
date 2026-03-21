@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Explore Seattle
 
-## Getting Started
+Explore Seattle is a travel and activity website for tourists and locals to quickly find things to see, visit, and explore within the seattle area. The website uses leaflet for an interative map making finding nearby attractions a breeze, and provides short descriptions for each place.
 
-First, run the development server:
+Live Website viewable at: https://explore-seattle.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<img width="956" height="430" alt="image" src="https://github.com/user-attachments/assets/08d48888-25e2-4d3a-9ea1-288fb9805731" />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ <br>
+ 
+ 
+### Want to make your own map?
+1. Fork this repository.
+2. Rename and set the map center through the SEATTLE_CENTER variable in Components/Map.tsx
+3. Add location data to data/spots.ts
+4. Add images to public/images/*
+5. "npm run dev" to run locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<br>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Versions
+npm v10.9.2  
+Node v22.14.0    
+-Built with NextJS & Leaflet
