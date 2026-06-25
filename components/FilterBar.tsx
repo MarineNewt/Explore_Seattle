@@ -20,6 +20,7 @@ export default function FilterBar({ active, onChange }: FilterBarProps) {
     <div
       style={{
         background: "var(--surface)",
+        backgroundColor: "#1C4A6F",
         borderBottom: "1px solid var(--border)",
         padding: "0 24px",
         display: "flex",
@@ -42,8 +43,8 @@ export default function FilterBar({ active, onChange }: FilterBarProps) {
               fontSize: "12.5px",
               fontFamily: "inherit",
               fontWeight: isActive ? 500 : 400,
-              color: isActive ? color : "var(--text-secondary)",
-              background: "transparent",
+              color: "#F7F9F9",
+              background: isActive ? color : "transparent",
               border: "none",
               borderBottom: isActive ? `2px solid ${color}` : "2px solid transparent",
               cursor: "pointer",

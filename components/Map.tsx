@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Spot } from "@/data/spots";
 
 const SEATTLE_CENTER: [number, number] = [47.6062, -122.3321];
@@ -37,6 +37,8 @@ export default function Map(props: MapProps) {
   const markersRef = useRef<globalThis.Map<string, any>>(new globalThis.Map());
   const onSpotClickRef = useRef(onSpotClick);
 
+  const [mapReady, setMapReady] = useState(false);
+
   // Keep callback ref fresh without re-running effects
   useEffect(() => {
     onSpotClickRef.current = onSpotClick;
@@ -66,21 +68,31 @@ export default function Map(props: MapProps) {
         zoomControl: false,
       });
 
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        maxZoom: 19,
-      }).addTo(map);
+      L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        {
+          maxZoom: 19,
+        }
+      ).addTo(map);
 
       L.control.zoom({ position: "bottomright" }).addTo(map);
 
       mapRef.current = map;
+      setMapReady(true);
+
+      map.whenReady(() => {
+        map.invalidateSize();
+      });
     });
 
     return () => {
       cancelled = true;
+
       if (mapRef.current) {
         mapRef.current.remove();
         mapRef.current = null;
         markersRef.current.clear();
+        setMapReady(false);
       }
     };
   }, []);

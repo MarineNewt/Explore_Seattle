@@ -1,4 +1,19 @@
 "use client";
+import { Roboto } from 'next/font/google'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+})
+// Color scheme: 
+// Dominant BG & text
+// --Mist / Cloud White (#F7F9F9)
+// --Deep Charcoal / Cedar Bark (#242B27)
+// Primary & Secondary Colors
+// --Moss / Evergreen (#2E5A44)
+// --Puget Sound Blue (#1C4A6F)
+// Action & Accent Colors
+// --Sunset Gold / Sunray (#E8A838)
+// --Rustic Burnt Orange (#C85A17)
 
 export default function Header() {
   return (
@@ -6,7 +21,7 @@ export default function Header() {
       style={{
         height: "var(--header-height)",
         background: "var(--surface)",
-        borderBottom: "1px solid var(--border)",
+        backgroundColor: "#2E5A44",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -19,13 +34,11 @@ export default function Header() {
         <span style={{ fontSize: "22px" }}>🏔️</span>
         <div>
           <h1
+            className={roboto.className}
             style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "18px",
+              fontSize: "20px",
               fontWeight: 600,
-              letterSpacing: "-0.01em",
-              color: "var(--text-primary)",
-              lineHeight: 1.1,
+              color: "#242B27",
             }}
           >
             Seattle Adventures
@@ -33,7 +46,7 @@ export default function Header() {
           <p
             style={{
               fontSize: "11px",
-              color: "var(--text-muted)",
+              color: "#F7F9F9",
               letterSpacing: "0.06em",
               textTransform: "uppercase",
               marginTop: "1px",

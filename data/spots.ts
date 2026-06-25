@@ -398,6 +398,17 @@ export const spots: Spot[] = [
     website: "https://www.seattle.gov/parks/parks/golden-gardens-park",
     hours: "Daily 4am–10:30pm",
   },
+  {
+    id: "pocket-beach",
+    name: "Pocket Beach",
+    category: "nature",
+    lat: 47.6173,
+    lng: -122.3586,
+    description: "Rocky shoreline nestled between Olympic Sculpture Park and the sound.",
+    details: "Pocket beach is a peaceful escape along Seattle's primary waterfront trail offering a place to relax beside the Sound and enjoy the water. The park itself has a combination of sand, gravel, and cobblestone with water access between larger rocks and boundlers decorating the park's outline. During low tide the park has also become a hotstpot for lowtide tidepooling with various small sea critters living between the rocks.",
+    photo: "/Images/spot-pocketbeach.jpg",
+    website: "https://salishmagazine.org/pocket-beach/",
+  },
   // {
   //   id: "seattle",
   //   name: "Seattle",
